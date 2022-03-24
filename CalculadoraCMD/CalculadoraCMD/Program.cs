@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CalculadoraCMD
 {
@@ -10,6 +9,13 @@ namespace CalculadoraCMD
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Escreva Seu Nome: ");
+            string nome = Console.ReadLine();
+            Console.WriteLine("Seu nome é : " + nome);
+
+
+            Console.ReadLine();
+        
         }
     }
 }
