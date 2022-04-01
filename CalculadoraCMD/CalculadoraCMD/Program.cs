@@ -20,6 +20,10 @@ namespace CalculadoraCMD
 
         static void Main(string[] args)
         {
+            bool escolheuSair = false;
+
+            while (!escolheuSair)
+            {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Clear();
 
@@ -34,7 +38,17 @@ namespace CalculadoraCMD
 
             Console.WriteLine(opcao);
 
-            Console.ReadLine();
+            switch (opcao)
+	        {
+	            case Menu.Sair:
+                        escolheuSair = true;
+                break;
+	        }
+
+            }
+
+
+            
         
         }
     }
