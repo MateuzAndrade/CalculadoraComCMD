@@ -17,7 +17,7 @@ namespace CalculadoraCMD
             Potencia = 5,
             Raiz = 6,
             Sair = 7,
-        } 
+        }
 
         static void Main(string[] args)
         {
@@ -25,23 +25,23 @@ namespace CalculadoraCMD
 
             while (!escolheuSair)
             {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Clear();
 
-            Console.WriteLine("_________________________________________________________________\n");
-            Console.WriteLine("Bem Vindo a Minha Primeira Calculadora!\nSelicione uma das opções:");
-            Console.WriteLine("_________________________________________________________________\n");
+                Console.WriteLine("_________________________________________________________________\n");
+                Console.WriteLine("Bem Vindo a Minha Primeira Calculadora!\nSelicione uma das opções:");
+                Console.WriteLine("_________________________________________________________________\n");
 
-            Console.WriteLine("1 - Soma\n2 - Subtração\n3 - Multiplicação\n4 - Dvisão\n5 - Potencia\n6 - Raiz\n7 - Sair");
+                Console.WriteLine("1 - Soma\n2 - Subtração\n3 - Multiplicação\n4 - Dvisão\n5 - Potencia\n6 - Raiz\n7 - Sair");
 
-                        /*Casting*/
-            Menu opcao = (Menu)int.Parse(Console.ReadLine());
+                /*Casting*/
+                Menu opcao = (Menu)int.Parse(Console.ReadLine());
 
-            Console.WriteLine(opcao);
-            
-            switch (opcao)
-	            {
-		            case Menu.Soma:
+                Console.WriteLine(opcao);
+
+                switch (opcao)
+                {
+                    case Menu.Soma:
                         Soma();
                         break;
 
@@ -49,43 +49,45 @@ namespace CalculadoraCMD
                         Subtracao();
                         break;
 
-                     case Menu.Multiplicacao:
+                    case Menu.Multiplicacao:
                         Multiplicacao();
-                     break;
+                        break;
 
-                        case Menu.Divisão:
+                    case Menu.Divisão:
                         Divisao();
                         break;
-                        
-                    /*case Menu.Potencia:
+
+                    case Menu.Potencia:
                         Potencia();
                         break;
-                    */
-                    case Menu.Raiz:
-                     break;
-                    case Menu.Sair:
-                                escolheuSair = true;
-                     break;
-                  
-	             }
 
-          
+                    case Menu.Raiz:
+                        Raiz();
+                        break;
+
+                    case Menu.Sair:
+                        escolheuSair = true;
+                        break;
+
+                }
+
+
                 Console.Clear();
             }
 
 
-            
-        
+
+
         }
 
-        static void Soma ()
+        static void Soma()
         {
             Console.WriteLine("Soma de dois Numeros:");
             Console.WriteLine("Digite o primeiro Numero: ");
             int a = int.Parse(Console.ReadLine());
             Console.WriteLine("Digite o primeiro Segundo numero: ");
             int b = int.Parse(Console.ReadLine());
-            int resultado  = a + b;
+            int resultado = a + b;
             Console.WriteLine($"O resultado é: {resultado}");
             Console.WriteLine("Aperte ENTER para voltar para o menu");
             Console.ReadLine();
@@ -98,7 +100,7 @@ namespace CalculadoraCMD
             int a = int.Parse(Console.ReadLine());
             Console.WriteLine("Digite o segundo numero: ");
             int b = int.Parse(Console.ReadLine());
-            int resultado  = a - b;
+            int resultado = a - b;
             Console.WriteLine($"O resultado da subtrção entre {a} e {b}: {resultado}");
             Console.WriteLine("Aperte ENTER para voltar para o menu");
             Console.ReadLine();
@@ -111,7 +113,7 @@ namespace CalculadoraCMD
             int a = int.Parse(Console.ReadLine());
             Console.WriteLine("Digite o segundo numero: ");
             int b = int.Parse(Console.ReadLine());
-            int resultado  = a * b;
+            int resultado = a * b;
             Console.WriteLine($"O resultado da multiplicação entre {a} e {b}: {resultado}");
             Console.WriteLine("Aperte ENTER para voltar para o menu");
             Console.ReadLine();
@@ -124,27 +126,36 @@ namespace CalculadoraCMD
             int a = int.Parse(Console.ReadLine());
             Console.WriteLine("Digite o segundo numero: ");
             int b = int.Parse(Console.ReadLine());
-            int resultado  = a / b;
+            int resultado = a / b;
             Console.WriteLine($"O resultado da divisão entre {a} e {b}: {resultado}");
             Console.WriteLine("Aperte ENTER para voltar para o menu");
             Console.ReadLine();
         }
 
-        /*
-
-        static void double Potencia()
+        static void Potencia()
         {
             Console.WriteLine("Potência de dois Numeros:");
-            Console.WriteLine("Digite o primeiro Numero: ");
-            double a = double.Parse(Console.ReadLine());
-            Console.WriteLine("Digite o segundo numero: ");
-            double b = double.Parse(Console.ReadLine());
-            double resultado = Math.Pow(a,b);
-            Console.WriteLine($"O resultado da potência entre {a} e {b}: {resultado}");
+            Console.WriteLine("Digite a base: ");
+            int baseNum = int.Parse(Console.ReadLine());
+            Console.WriteLine("Digite o expoente: ");
+            int expo = int.Parse(Console.ReadLine());
+            int resultado = (int)Math.Pow(baseNum, expo);
+            Console.WriteLine($"O resultado da potência entre a base {baseNum} e o expoente {expo}: {resultado}");
             Console.WriteLine("Aperte ENTER para voltar para o menu");
             Console.ReadLine();
         }
-        */
+
+        static void Raiz()
+        {
+            Console.WriteLine("Raiz de dois Numeros:");
+            Console.WriteLine("Digite o número: ");
+            int a = int.Parse(Console.ReadLine());
+            double resultado = Math.Sqrt(a);
+            Console.WriteLine($"A rauz do número {a} é: {resultado}");
+            Console.WriteLine("Aperte ENTER para voltar para o menu");
+            Console.ReadLine();
+        }
+
     }
 
 }
